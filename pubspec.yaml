@@ -1,0 +1,30 @@
+name: movie_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  font_awesome_flutter: ^10.7.0
+  dio: ^5.5.0
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/placeholder.png
+    - assets/icons/CalendarBlank.svg
+    - assets/icons/Clock.svg
+    - assets/icons/Star.svg
+    - assets/icons/Ticket.svg
+    - assets/icons/Save.svg
