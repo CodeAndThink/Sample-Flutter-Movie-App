@@ -43,77 +43,101 @@ class SmallMovieCard extends StatelessWidget {
               width: 13,
             ),
             Expanded(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(movie.title,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w400, fontSize: 16),
-                    overflow: TextOverflow.ellipsis),
-                Row(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/icons/Star.svg",
-                      colorFilter: const ColorFilter.mode(
-                          Color(0xFFFF8700), BlendMode.srcIn),
-                    ),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      movie.voteAverage.toString().substring(0, 3),
-                      style: const TextStyle(
-                          color: Color(0xFFFF8700),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    SvgPicture.asset("assets/icons/Ticket.svg",
-                        colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.primary,
-                            BlendMode.srcIn)),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    const Text(
-                      "Category",
-                      style: TextStyle(fontSize: 12),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    SvgPicture.asset("assets/icons/CalendarBlank.svg",
-                        colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.primary,
-                            BlendMode.srcIn)),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    Text(movie.releaseDate.toString().substring(0, 4),
-                        style: const TextStyle(fontSize: 12))
-                  ],
-                ),
-                Row(
-                  children: [
-                    SvgPicture.asset("assets/icons/Clock.svg",
-                        colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.primary,
-                            BlendMode.srcIn)),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    const Text(
-                      "Duration",
-                      style: TextStyle(fontSize: 12),
-                    )
-                  ],
-                )
-              ],
-            ))
+                child: SizedBox(
+                    height: 120,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(movie.title,
+                            style: Theme.of(context).textTheme.headlineMedium,
+                            overflow: TextOverflow.ellipsis),
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              "assets/icons/Star.svg",
+                              height: 16,
+                              width: 16,
+                              colorFilter: const ColorFilter.mode(
+                                  Color(0xFFFF8700), BlendMode.srcIn),
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              movie.voteAverage.toString().substring(0, 3),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: const Color(0xFFFF8700)),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SvgPicture.asset("assets/icons/Lang.svg",
+                                height: 16,
+                                width: 16,
+                                colorFilter: ColorFilter.mode(
+                                    Theme.of(context).colorScheme.primary,
+                                    BlendMode.srcIn)),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              movie.originalLanguage == null
+                                  ? "Unknown"
+                                  : movie.originalLanguage!.toUpperCase(),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SvgPicture.asset("assets/icons/CalendarBlank.svg",
+                                height: 16,
+                                width: 16,
+                                fit: BoxFit.fitWidth,
+                                colorFilter: ColorFilter.mode(
+                                    Theme.of(context).colorScheme.primary,
+                                    BlendMode.srcIn)),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(movie.releaseDate.toString().substring(0, 4),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium
+                                    ?.copyWith(fontWeight: FontWeight.w400))
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SvgPicture.asset("assets/icons/Vote.svg",
+                                height: 16,
+                                width: 16,
+                                colorFilter: ColorFilter.mode(
+                                    Theme.of(context).colorScheme.primary,
+                                    BlendMode.srcIn)),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              movie.voteCount.toString(),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        )
+                      ],
+                    )))
           ],
         ),
       ),

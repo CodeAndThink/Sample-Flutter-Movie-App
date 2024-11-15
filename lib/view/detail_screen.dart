@@ -33,8 +33,9 @@ class DetailScreenState extends State<DetailScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text("Detail"),
+        title: Center(
+          child:
+              Text("Detail", style: Theme.of(context).textTheme.headlineSmall),
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
@@ -176,8 +177,8 @@ class DetailScreenState extends State<DetailScreen> {
                               ),
                               Text(
                                 data.title,
-                                style: const TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w600),
+                                style:
+                                    Theme.of(context).textTheme.headlineMedium,
                                 maxLines: 2,
                               )
                             ],
@@ -202,9 +203,13 @@ class DetailScreenState extends State<DetailScreen> {
                             ),
                             Text(
                               data.releaseDate.toString().substring(0, 4),
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary),
                             ),
                             VerticalDivider(
                               color: Theme.of(context).colorScheme.secondary,
@@ -220,9 +225,13 @@ class DetailScreenState extends State<DetailScreen> {
                             ),
                             Text(
                               "${data.duration} minutes",
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary),
                             ),
                             VerticalDivider(
                               color: Theme.of(context).colorScheme.secondary,
@@ -240,9 +249,13 @@ class DetailScreenState extends State<DetailScreen> {
                               data.genres?.first == null
                                   ? ""
                                   : data.genres!.first.name,
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary),
                             ),
                           ],
                         ),
@@ -253,6 +266,10 @@ class DetailScreenState extends State<DetailScreen> {
                       Text(
                         data.overview == null ? "" : data.overview!,
                         textAlign: TextAlign.justify,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(fontWeight: FontWeight.w400),
                       )
                     ],
                   ),

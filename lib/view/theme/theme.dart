@@ -12,7 +12,7 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: const ColorScheme.light(
         primary: Colors.black,
-        secondary: Colors.orange,
+        secondary: Color(0xFF696974),
         surface: Colors.white,
       ),
       textTheme: const TextTheme(
@@ -20,20 +20,26 @@ class AppTheme {
           fontSize: 25.0,
           fontStyle: FontStyle.normal,
           fontWeight: FontWeight.bold,
-          color: Colors.blueAccent,
+          color: Colors.black,
         ),
         headlineMedium: TextStyle(
-          fontSize: 20.0,
+          fontSize: 18,
           fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.bold,
-          color: Colors.blueAccent,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
         ),
         headlineSmall: TextStyle(
-          fontSize: 17.0,
+          fontSize: 16,
           fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.bold,
-          color: Colors.blueAccent,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
         ),
+        bodyMedium: TextStyle(
+          fontSize: 12,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w500,
+          color: Colors.black
+        )
       ),
       appBarTheme: const AppBarTheme(
         titleTextStyle: TextStyle(
@@ -43,7 +49,7 @@ class AppTheme {
         ),
       ),
       buttonTheme: const ButtonThemeData(
-        buttonColor: Colors.blue,
+        buttonColor: Colors.white,
         textTheme: ButtonTextTheme.primary,
       ),
       iconTheme: const IconThemeData(
@@ -71,20 +77,26 @@ class AppTheme {
           fontSize: 25.0,
           fontStyle: FontStyle.normal,
           fontWeight: FontWeight.bold,
-          color: Colors.orange,
-        ),
-        headlineMedium: TextStyle(
-          fontSize: 20.0,
-          fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.bold,
-          color: Colors.orange,
-        ),
-        headlineSmall: TextStyle(
-          fontSize: 12.0,
-          fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.w400,
           color: Colors.white,
         ),
+        headlineMedium: TextStyle(
+          fontSize: 18.0,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
+        headlineSmall: TextStyle(
+          fontSize: 16,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
+        bodyMedium: TextStyle(
+          fontSize: 12,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w500,
+          color: Colors.white
+        )
       ),
       appBarTheme: const AppBarTheme(
         titleTextStyle: TextStyle(
@@ -94,7 +106,7 @@ class AppTheme {
         ),
       ),
       buttonTheme: const ButtonThemeData(
-        buttonColor: Colors.blueGrey,
+        buttonColor: Colors.black,
         textTheme: ButtonTextTheme.primary,
       ),
       iconTheme: const IconThemeData(

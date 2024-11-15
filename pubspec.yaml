@@ -28,3 +28,5 @@ flutter:
     - assets/icons/Star.svg
     - assets/icons/Ticket.svg
     - assets/icons/Save.svg
+    - assets/icons/Vote.svg
+    - assets/icons/Lang.svg

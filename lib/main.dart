@@ -5,6 +5,7 @@ import 'package:movie_app/bloc/movie_detail/movie_detail_bloc.dart';
 import 'package:movie_app/bloc/movie_genres/movie_genre_bloc.dart';
 import 'package:movie_app/data/repository/movie_repository.dart';
 import 'package:movie_app/view/home_screen.dart';
+import 'package:movie_app/view/theme/theme.dart';
 
 void main() {
   final MovieRepository repository = MovieRepository();
@@ -24,8 +25,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       home: const Scaffold(
         body: Center(

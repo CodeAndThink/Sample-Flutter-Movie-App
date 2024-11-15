@@ -41,8 +41,8 @@ class HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Center(
-            child: Text("Movies"),
+          title: Center(
+            child: Text("Movies", style: Theme.of(context).textTheme.headlineSmall),
           ),
         ),
         body: BlocBuilder<MovieBloc, MovieState>(builder: (context, state) {
