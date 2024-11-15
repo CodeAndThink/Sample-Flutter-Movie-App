@@ -6,7 +6,6 @@ import 'package:movie_app/bloc/movie_data/movie_state.dart';
 import 'package:movie_app/data/data_model/movie.dart';
 import 'package:movie_app/view/detail_screen.dart';
 import 'package:movie_app/view/items/small_movie_card.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -31,7 +30,6 @@ class HomeScreenState extends State<HomeScreen> {
         }
       }
     });
-  }
 
   void _onFetchPublicMovieList(int page) {
     context.read<MovieBloc>().add(FetchPublicMovieList(page: page));
@@ -79,7 +77,6 @@ class HomeScreenState extends State<HomeScreen> {
             child: Text("No movie available!"),
           );
         }
-      }),
-    );
+      });
   }
 }
