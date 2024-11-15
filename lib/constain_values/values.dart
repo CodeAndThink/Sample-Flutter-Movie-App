@@ -4,6 +4,7 @@ class Values {
   static const page = 1;
   static const includeAdult = "false";
   static const imageSmall = "w500";
+  static const imageLarge = "w1280";
   static const imageUrl = "https://image.tmdb.org/t/p/";
   static const apiKey = "e9c1d0bbe10fee23ecab4da8b0e971d3";
   static const authHeader =

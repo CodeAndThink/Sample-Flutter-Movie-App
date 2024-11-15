@@ -76,7 +76,7 @@ class DetailScreenState extends State<DetailScreen> {
                           placeholder: 'assets/images/placeholder.png',
                           image: data.backdropPath != null
                               ? Values.imageUrl +
-                                  Values.imageSmall +
+                                  Values.imageLarge +
                                   data.backdropPath!
                               : 'assets/images/placeholder.png',
                           width: screenWidth,
