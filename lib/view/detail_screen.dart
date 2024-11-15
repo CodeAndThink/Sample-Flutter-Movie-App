@@ -30,7 +30,7 @@ class DetailScreenState extends State<DetailScreen> {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
-
+    final screenPadding = MediaQuery.of(context).padding;
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -94,7 +94,7 @@ class DetailScreenState extends State<DetailScreen> {
                           },
                         ),
                         Positioned(
-                          right: 11,
+                          right: screenHeight > screenWidth ? 11 : screenPadding.right,
                           bottom: 9,
                           child: Container(
                             height: 24,
@@ -134,6 +134,7 @@ class DetailScreenState extends State<DetailScreen> {
                       ),
                       Row(
                         children: [
+                          SizedBox(width: screenHeight > screenWidth ? 11 : screenPadding.left,),
                           SizedBox(
                             height: 120,
                             width: 100,
@@ -289,14 +290,14 @@ class DetailScreenState extends State<DetailScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text("Thông báo"),
-          content: const Text("Đây là nội dung của alert."),
+          title: const Text("Error"),
+          content: const Text("Fetch data error!"),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text("Đóng"),
+              child: const Text("Close"),
             ),
           ],
         );
