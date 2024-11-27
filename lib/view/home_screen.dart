@@ -23,12 +23,9 @@ class HomeScreenState extends State<HomeScreen> {
     super.initState();
     _onFetchPublicMovieList(_page);
     _scrollController.addListener(() {
-      if (_scrollController.position.atEdge) {
-        bool isAtTop = _scrollController.position.pixels == 0;
-        if (!isAtTop) {
-          _page += 1;
-          _onFetchPublicMovieList(_page);
-        }
+      if (_scrollController.position.extentAfter <= 300) {
+        _page += 1;
+        _onFetchPublicMovieList(_page);
       }
     });
   }
@@ -42,7 +39,8 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Center(
-            child: Text("Movies", style: Theme.of(context).textTheme.headlineSmall),
+            child: Text("Movies",
+                style: Theme.of(context).textTheme.headlineSmall),
           ),
         ),
         body: BlocBuilder<MovieBloc, MovieState>(builder: (context, state) {
