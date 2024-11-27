@@ -61,7 +61,8 @@ class DetailScreenState extends State<DetailScreen> {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state is MovieDetailLoaded) {
+        } else 
+        if (state is MovieDetailLoaded) {
           final data = state.movieData;
 
           return SingleChildScrollView(
@@ -138,32 +139,35 @@ class DetailScreenState extends State<DetailScreen> {
                           SizedBox(
                             height: 120,
                             width: 100,
-                            child: ClipRRect(
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(16)),
-                                child: Center(
-                                  child: FadeInImage.assetNetwork(
-                                    placeholder:
-                                        'assets/images/placeholder.png',
-                                    image: data.posterPath != null
-                                        ? Values.imageUrl +
-                                            Values.imageSmall +
-                                            data.posterPath!
-                                        : 'assets/images/placeholder.png',
-                                    width: 100,
-                                    height: 120,
-                                    fit: BoxFit.fitWidth,
-                                    imageErrorBuilder:
-                                        (context, error, stackTrace) {
-                                      return Image.asset(
-                                        'assets/images/placeholder.png',
-                                        width: 100,
-                                        height: 120,
-                                        fit: BoxFit.fitWidth,
-                                      );
-                                    },
-                                  ),
-                                )),
+                            child: Hero(
+                              tag: "${data.title}",
+                              child: ClipRRect(
+                                  borderRadius:
+                                      const BorderRadius.all(Radius.circular(16)),
+                                  child: Center(
+                                    child: FadeInImage.assetNetwork(
+                                      placeholder:
+                                          'assets/images/placeholder.png',
+                                      image: data.posterPath != null
+                                          ? Values.imageUrl +
+                                              Values.imageSmall +
+                                              data.posterPath!
+                                          : 'assets/images/placeholder.png',
+                                      width: 100,
+                                      height: 120,
+                                      fit: BoxFit.fitWidth,
+                                      imageErrorBuilder:
+                                          (context, error, stackTrace) {
+                                        return Image.asset(
+                                          'assets/images/placeholder.png',
+                                          width: 100,
+                                          height: 120,
+                                          fit: BoxFit.fitWidth,
+                                        );
+                                      },
+                                    ),
+                                  )),
+                            ),
                           ),
                           const SizedBox(
                             width: 10,
@@ -176,11 +180,14 @@ class DetailScreenState extends State<DetailScreen> {
                               const SizedBox(
                                 height: 72,
                               ),
-                              Text(
-                                data.title,
-                                style:
-                                    Theme.of(context).textTheme.headlineMedium,
-                                maxLines: 2,
+                              Hero(
+                                tag: "${data.id}",
+                                child: Text(
+                                  data.title,
+                                  style:
+                                      Theme.of(context).textTheme.headlineMedium,
+                                  maxLines: 2,
+                                ),
                               )
                             ],
                           ))

@@ -16,29 +16,32 @@ class SmallMovieCard extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface,
         child: Row(
           children: [
-            ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Center(
-                  child: FadeInImage.assetNetwork(
-                    placeholder: 'assets/images/placeholder.png',
-                    image: movie.posterPath != null
-                        ? Values.imageUrl +
-                            Values.imageSmall +
-                            movie.posterPath!
-                        : 'assets/images/placeholder.png',
-                    width: 100,
-                    height: 120,
-                    fit: BoxFit.fitWidth,
-                    imageErrorBuilder: (context, error, stackTrace) {
-                      return Image.asset(
-                        'assets/images/placeholder.png',
-                        width: 100,
-                        height: 120,
-                        fit: BoxFit.fitWidth,
-                      );
-                    },
-                  ),
-                )),
+            Hero(
+              tag: "${movie.title}",
+              child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(16)),
+                  child: Center(
+                    child: FadeInImage.assetNetwork(
+                      placeholder: 'assets/images/placeholder.png',
+                      image: movie.posterPath != null
+                          ? Values.imageUrl +
+                              Values.imageSmall +
+                              movie.posterPath!
+                          : 'assets/images/placeholder.png',
+                      width: 100,
+                      height: 120,
+                      fit: BoxFit.fitWidth,
+                      imageErrorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          'assets/images/placeholder.png',
+                          width: 100,
+                          height: 120,
+                          fit: BoxFit.fitWidth,
+                        );
+                      },
+                    ),
+                  )),
+            ),
             const SizedBox(
               width: 13,
             ),
@@ -49,9 +52,12 @@ class SmallMovieCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(movie.title,
-                            style: Theme.of(context).textTheme.headlineMedium,
-                            overflow: TextOverflow.ellipsis),
+                        Hero(
+                          tag: "${movie.id}",
+                          child: Text(movie.title,
+                              style: Theme.of(context).textTheme.headlineMedium,
+                              overflow: TextOverflow.ellipsis),
+                        ),
                         Row(
                           children: [
                             SvgPicture.asset(
