@@ -43,6 +43,7 @@ class DetailScreenState extends State<DetailScreen> {
             Navigator.pop(context);
           },
         ),
+        
         actions: [
           IconButton(
               onPressed: () {},

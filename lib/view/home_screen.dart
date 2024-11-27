@@ -23,10 +23,7 @@ class HomeScreenState extends State<HomeScreen> {
     super.initState();
     _onFetchPublicMovieList(_page);
     _scrollController.addListener(() {
-      const threshold = 200.0;
-      if (_scrollController.position.maxScrollExtent -
-              _scrollController.position.pixels <=
-          threshold) {
+      if (_scrollController.position.extentAfter <= 300) {
         _page += 1;
         _onFetchPublicMovieList(_page);
       }
